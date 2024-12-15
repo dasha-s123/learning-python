@@ -1,4 +1,4 @@
-class Restaurant():
+class Restaurant:
     """Модель ресторана"""
     def __init__(self, restaurant_name, cuisine_type, open = True):
         """Инициирует атрибуты названия и типа кухни"""
