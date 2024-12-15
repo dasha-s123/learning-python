@@ -8,18 +8,26 @@ class Restaurant():
 
     def describe_restaurant(self):
         """Описывает ресторан"""
-        print(f'\nНзвание ресторана {self.restaurant_name}\nТип кухни {self.cuisine_type}\n')
+        print(f'Нзвание ресторана {self.restaurant_name}\nТип кухни {self.cuisine_type}')
 
     def open_restaurant(self):
         if self.open:
-            print(f'Ресторан открыт!\n')
+            print(f'Ресторан открыт!')
         else:
-            print(f'Ресторан закрыт!\n')
+            print(f'Ресторан закрыт!')
 
 
-cafe_1 = Restaurant('first', 'european', open=False)
+cafe_1 = Restaurant('first', 'Европейская', open=False)
+cafe_2 = Restaurant('Чили', 'Мексиканская')
+cafe_3 = Restaurant('Оживи', 'кофейня', open=True)
+cafe_4 = Restaurant('Dodo пицца', 'пиццерия', False)
+# Список всех рестаранов города
+restaurants = [cafe_1, cafe_2, cafe_3, cafe_4]
 
-print(cafe_1.restaurant_name)
-print(cafe_1.cuisine_type)
-cafe_1.describe_restaurant()
-cafe_1.open_restaurant()
+# Выводит всю информацию о ресторанах
+for current_cafe in restaurants:
+    print(current_cafe.restaurant_name)
+    print(current_cafe.cuisine_type)
+    current_cafe.describe_restaurant()
+    current_cafe.open_restaurant()
+    print()
