@@ -16,6 +16,19 @@ class Restaurant:
         else:
             print(f'Ресторан закрыт!')
 
+    def set_number_surved(self, number_served):
+        """Определяет число посетителей"""
+        self.number_served = number_served
+
+
+    def show_number_served(self):
+        """Выводит число посетителей"""
+        print(f'За сегодня обслужено {self.number_served} человек(а)')
+
+    def increasement_number_served(self, new_people):
+        """Обновляет число посетителей"""
+        self.number_served += new_people
+
 
 cafe_1 = Restaurant('first', 'Европейская', open=False)
 cafe_2 = Restaurant('Чили', 'Мексиканская')
@@ -30,4 +43,8 @@ for current_cafe in restaurants:
     print(current_cafe.cuisine_type)
     current_cafe.describe_restaurant()
     current_cafe.open_restaurant()
+    current_cafe.set_number_surved(3)
+    current_cafe.show_number_served()
+    current_cafe.increasement_number_served(4)
+    current_cafe.show_number_served()
     print()
