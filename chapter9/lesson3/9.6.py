@@ -33,7 +33,7 @@ class Restaurant:
 class IceCreamStand(Restaurant):
     """Создает модель киоска с мороженным"""
 
-    def __init__(self, restaurant_name, cuisine_type, *flavors, open):
+    def __init__(self, restaurant_name, cuisine_type, *flavors, open=True):
         """Инициирует атрибуты киоска"""
         # Добавляет атрибут вкуса мороженного
         self.flavors = flavors
@@ -55,3 +55,4 @@ ice_cream_cafe_1.describe_restaurant()
 ice_cream_cafe_1.set_number_served(4)
 ice_cream_cafe_1.show_number_served()
 ice_cream_cafe_1.show_flavors()
+ice_cream_cafe_1.open_restaurant()
