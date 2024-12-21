@@ -1,0 +1,40 @@
+class Restaurant:
+    """Модель ресторана"""
+    def __init__(self, restaurant_name, cuisine_type, open = True):
+        """Инициирует атрибуты названия и типа кухни"""
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.open = open
+
+    def describe_restaurant(self):
+        """Описывает ресторан"""
+        print(f'Нзвание ресторана {self.restaurant_name}\nТип кухни {self.cuisine_type}')
+
+    def open_restaurant(self):
+        if self.open:
+            print(f'Ресторан открыт!')
+        else:
+            print(f'Ресторан закрыт!')
+
+    def set_number_surved(self, number_served):
+        """Определяет число посетителей"""
+        self.number_served = number_served
+
+
+    def show_number_served(self):
+        """Выводит число посетителей"""
+        print(f'За сегодня обслужено {self.number_served} человек(а)')
+
+    def increasement_number_served(self, new_people):
+        """Обновляет число посетителей"""
+        self.number_served += new_people
+
+
+class IceCreamStand():
+    """Создает модель киоска с мороженным"""
+    def __init__(self, restaurant_name, cuisine_type, flavor, open):
+        """Инициирует атрибуты киоска"""
+        # Добавляет атрибут вкуса мороженного
+        self.flavor = flavor
+        # Атрибуты киоска как ресторана
+        super().__init__(restaurant_name, cuisine_type, open)
