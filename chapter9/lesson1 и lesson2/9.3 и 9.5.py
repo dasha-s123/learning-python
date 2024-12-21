@@ -26,7 +26,7 @@ class User:
 
     def show_login_attemps(self):
         """Показывает количество входов"""
-        print(f"{self.new +' ' if self.new else ''}{'к' if self.new else 'К'}оличество входов - {self.login_attemps}")
+        print(f"{self.new + ' ' if self.new else ''}{'к' if self.new else 'К'}оличество входов - {self.login_attemps}")
 
     def increment_login_attemps(self):
         """Увеличивает количество попыток вхда на 1"""
@@ -38,7 +38,8 @@ class User:
         self.login_attemps = 0
         self.new = 'Теперь'
 
-user_1 = User('Даша', "Севостьянова", "Shypiece", 7,17, "женщина")
+
+user_1 = User('Даша', "Севостьянова", "Shypiece", 7, 17, "женщина")
 user_1.describe_user()
 user_1.greet_user()
 user_1.show_login_attemps()
