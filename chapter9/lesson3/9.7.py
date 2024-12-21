@@ -39,11 +39,11 @@ class User:
         self.new = 'Теперь'
 
 
-class Admin(User):
-    """Создает модель администратора"""
+class Privileges():
+    """Модель списка привелегий"""
 
-    def __init__(self, first_name, last_name, nickname, login_attemps=0, age=None, gender=None):
-        super().__init__(first_name, last_name, nickname, login_attemps, age, gender)
+    def __init__(self):
+        """Инициирует привелегии"""
         self.privileges = None
 
     def determine_privileges(self, *priveleges):
@@ -55,6 +55,14 @@ class Admin(User):
             print(f'\t{right}')
 
 
+class Admin(User):
+    """Создает модель администратора"""
+
+    def __init__(self, first_name, last_name, nickname, login_attemps=0, age=None, gender=None):
+        super().__init__(first_name, last_name, nickname, login_attemps, age, gender)
+        self.privileges = Privileges()
+
+
 user_1 = Admin('Даша', "Севостьянова", "Shypiece", 7, 17, "женщина")
 user_1.describe_user()
 user_1.greet_user()
@@ -63,7 +71,7 @@ user_1.increment_login_attemps()
 user_1.show_login_attemps()
 user_1.reset_login_attemps()
 user_1.show_login_attemps()
-user_1.determine_privileges('банить ользователей', "добавлять сообщения",
-                            "удалять сообщения", "удалять пользователей"
-                            )
-user_1.show_privileges()
+user_1.privileges.determine_privileges('банить ользователей', "добавлять сообщения",
+                                       "удалять сообщения", "удалять пользователей"
+                                       )
+user_1.privileges.show_privileges()
