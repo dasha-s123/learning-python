@@ -1,6 +1,7 @@
 class Restaurant:
     """Модель ресторана"""
-    def __init__(self, restaurant_name, cuisine_type, open = True):
+
+    def __init__(self, restaurant_name, cuisine_type, open=True):
         """Инициирует атрибуты названия и типа кухни"""
         self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
@@ -16,10 +17,9 @@ class Restaurant:
         else:
             print(f'Ресторан закрыт!')
 
-    def set_number_surved(self, number_served):
+    def set_number_served(self, number_served):
         """Определяет число посетителей"""
         self.number_served = number_served
-
 
     def show_number_served(self):
         """Выводит число посетителей"""
@@ -30,11 +30,28 @@ class Restaurant:
         self.number_served += new_people
 
 
-class IceCreamStand():
+class IceCreamStand(Restaurant):
     """Создает модель киоска с мороженным"""
-    def __init__(self, restaurant_name, cuisine_type, flavor, open):
+
+    def __init__(self, restaurant_name, cuisine_type, *flavors, open):
         """Инициирует атрибуты киоска"""
         # Добавляет атрибут вкуса мороженного
-        self.flavor = flavor
+        self.flavors = flavors
         # Атрибуты киоска как ресторана
         super().__init__(restaurant_name, cuisine_type, open)
+
+    def show_flavors(self):
+        """Выводит описание вкусов мороженного"""
+        print('В киоске есть следующие вкусы мороженного:')
+        for flavor in self.flavors:
+            print(f'\t{flavor}')
+
+
+ice_cream_cafe_1 = IceCreamStand('Пингвин', 'мороженное',
+                                 'ваниль', 'клубника', 'шоколад',
+                                 open=False)
+
+ice_cream_cafe_1.describe_restaurant()
+ice_cream_cafe_1.set_number_served(4)
+ice_cream_cafe_1.show_number_served()
+ice_cream_cafe_1.show_flavors()
