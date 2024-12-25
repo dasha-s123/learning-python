@@ -1,4 +1,0 @@
-I can create games in python
-I can create veb-sites in python
-I can solve tasks in python
-I can have fun in python! :)
