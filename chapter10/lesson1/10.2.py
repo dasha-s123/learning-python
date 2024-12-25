@@ -1,4 +1,4 @@
-filename = 'E:/GitHub/learning-python/text_files/learning_python.txt'
+filename = 'E:/GitHub/learning-python/chapter10/lesson1/10.1/learning_python.txt'
 
 with open(filename) as file_object:
     """Файл содержит строки - возможности питона"""
