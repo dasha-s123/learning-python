@@ -10,7 +10,6 @@ while True:
     else:
         promt = f'Привет, {user_name.title()}!'
 
-
     # Заношу данные в файл с приветствиями
     with open('users_book.txt', 'a') as file_object:
         file_object.write(f'{promt}\n')
